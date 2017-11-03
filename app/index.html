@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Buildstatus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="refresh" content="30"/>
+
+    <link rel="stylesheet" href="../public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+
+    <script type="text/javascript" src="../public/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../public/api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="../public/api/rhoapi-modules-ORM.js"></script>
+    <script type="text/javascript" src="../public/api/rhoapi-modules-ORMHelper.js"></script>
+    <script type="text/javascript" src="../public/api/rhoapi-modules-Ruby-RunTime.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){ 
+            $.ajax({
+                url:'https://raw.githubusercontent.com/tauplatform/rms-release-testing/master/version',
+                success: function(data) { $('.rms-version').text(data)}
+            }) });
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row page-title">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <h3 class="text-center">RMS build status</h3>
+        </div>
+      
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            Rhodes master branch            
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="https://travis-ci.org/rhomobile/rhodes.svg?branch=master">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            Rhodes 5-5-stable branch            
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="https://travis-ci.org/rhomobile/rhodes.svg?branch=5-5-stable">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            Rhodes 6-0-stable branch            
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="https://travis-ci.org/rhomobile/rhodes.svg?branch=6-0-stable">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            Rhodes release build <span class=rms-version></span>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="https://travis-ci.org/tauplatform/rms-release-testing.svg?branch=master">
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
